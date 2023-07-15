@@ -1,4 +1,4 @@
-package com.jetbrains.marco.Institute.Inbox;
+package com.garvit.institute_inbox;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;

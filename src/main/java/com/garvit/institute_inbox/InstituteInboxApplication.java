@@ -1,4 +1,4 @@
-package com.jetbrains.marco.Institute.Inbox;
+package com.garvit.institute_inbox;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
