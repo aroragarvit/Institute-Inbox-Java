@@ -36,7 +36,19 @@ public class UserController {
     }
 
     @PostMapping("/users")
-    public User createUser(@Valid @RequestBody User user) {
-        return userRepo.save(user);
+    public ResponseEntity<User> createUser(@Valid @RequestBody User user) {
+        userRepo.save(user);
+        return ResponseEntity.ok().body(user);
+    }
+
+    @PatchMapping("/users/{id}")
+    public ResponseEntity<User> updateUser(@PathVariable(value = "id") Long userId,
+            @Valid @RequestBody User userDetails) throws ResourceNotFoundException {
+        User user = userRepo
+                .findById(userId)
+                .orElseThrow(() -> new ResourceNotFoundException("User not found on :: " + userId));
+        user.setAvailable(userDetails.isAvailable());
+        final User updatedUser = userRepo.save(user);
+        return ResponseEntity.ok().body(updatedUser);
     }
 }
