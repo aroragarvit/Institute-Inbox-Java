@@ -23,4 +23,18 @@ public class User {
     private String hostel;
     private String block;
     private boolean isAvailable;
+
+    // print user
+    @Override
+    public String toString() {
+        return "User{" +
+        "id=" + id +
+        ", name='" + name + '\'' +
+        ", email='" + email + '\'' +
+        ", gender='" + gender + '\'' +
+        ", hostel='" + hostel + '\'' +
+        ", block='" + block + '\'' +
+        ", isAvailable=" + isAvailable +
+        '}';
+    }
 }
