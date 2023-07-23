@@ -1,6 +1,4 @@
 package com.garvit.institute_inbox.user;
-import org.springframework.data.repository.CrudRepository;
+import org.springframework.data.jpa.repository.JpaRepository;
 
-public interface UserRepo extends CrudRepository<User, Integer> {
-    
-}
+public interface UserRepo extends JpaRepository<User, Long> {}
